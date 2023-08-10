@@ -27,5 +27,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_local = SessionLocal()
 
 
-session_local.query(Temperature_etl).delete()
-session_local.commit()
+data = session_local.query(Temperature_etl).all()
+
+
+

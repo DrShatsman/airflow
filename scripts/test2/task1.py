@@ -10,11 +10,11 @@ Base = declarative_base()
 
 
 
-class Temperature_etl(Base):
-    __tablename__ = 'temperature_etl'
+class Currency_etl(Base):
+    __tablename__ = 'currency_etl'
     id = Column(Integer, nullable=False, unique=True, primary_key=True, autoincrement=True)
-    city = Column(VARCHAR(50), nullable=False)
-    temperature = Column(Float, nullable=False)
+    currency = Column(VARCHAR(50), nullable=False)
+    value = Column(Float, nullable=False)
     date_save = Column (TIMESTAMP, nullable=False)
 
 
@@ -27,5 +27,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_local = SessionLocal()
 
 
-session_local.query(Temperature_etl).delete()
+session_local.query(Currency_etl).delete()
 session_local.commit()
