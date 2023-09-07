@@ -42,6 +42,8 @@ def weed_info():
 
 
 #Подключение к БД
+#Понятно, что в коде нельзя указывать credentials в таком виде, это сделано для тестового задания, чтобы вы при желании тоже могли подключиться к БД и проверить.
+#На рабочем сервере это будет браться из параметров (из файла конфига или из свойств подключения Airflow)
 SQLALCHEMY_DATABASE_URI = f"postgresql://swintus:parol@194.87.102.3:5432/test_database"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
